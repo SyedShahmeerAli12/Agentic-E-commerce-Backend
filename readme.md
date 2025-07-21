@@ -33,8 +33,11 @@ The system uses a decoupled architecture. A FastAPI server runs the main ADK Age
 ### 1. Clone the Repository
 ```bash
 git clone [https://github.com/your-username/katalyst-agent.git](https://github.com/your-username/katalyst-agent.git)
+```
+```bash
 cd katalyst-agent
 ```
+
 
 ### 2. Configure Environment
 Create a `.env` file for your secret API key by copying the template.
