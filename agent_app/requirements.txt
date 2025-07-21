@@ -1,0 +1,9 @@
+sqlalchemy
+psycopg2-binary
+pydantic
+fastapi
+uvicorn[standard]
+python-dotenv
+google-adk==1.7.0
+google-generativeai==0.7.1
+fastmcp 

@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables - DO NOT COMMIT YOUR SECRETS
+.env
+
+# Local database data
+postgres-data/
+
+# IDE specific files
+.vscode/
+.idea/
+
+# One-off setup scripts
+setup.py
+setup_katalyst.py

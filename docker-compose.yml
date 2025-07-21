@@ -1,0 +1,33 @@
+# docker-compose.yml
+services:
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: katalyst-postgres-db
+    environment:
+      - POSTGRES_USER=katalyst
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=katalystdb
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U katalyst -d katalystdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  db-seeder:
+    build: . # Use the same Dockerfile as the agent-runner
+    depends_on:
+      postgres-db:
+        condition: service_healthy
+    command: python seed_db.py # The command this container will run
+
+  agent-runner:
+    container_name: katalyst-agent-runner
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      db-seeder: # Wait for the seeder to finish
+        condition: service_completed_successfully
+    env_file:
+      - ./.env
