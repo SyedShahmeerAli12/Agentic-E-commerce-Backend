@@ -32,7 +32,7 @@ The system uses a decoupled architecture. A FastAPI server runs the main ADK Age
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/your-username/katalyst-agent.git](https://github.com/your-username/katalyst-agent.git)
+git clone https://github.com/SyedShahmeerAli12/Agentic-E-commerce-Backend.git
 ```
 ```bash
 cd katalyst-agent
